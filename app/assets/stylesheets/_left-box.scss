@@ -1,0 +1,58 @@
+.chat-left{
+  position: relative;
+  float: left;
+  height: 100vh;
+  width: 300px;
+  background-color: #253141;
+ &__user-name{
+   position: relative;
+   padding: 0 20px;
+   align-items: center;
+   display: flex;
+   height: 100px;
+   background-color: #253141;
+  &__box{
+    display: flex;
+    width: 100%;
+   &__name{
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+   }
+   .chat-left__user-name__box__in{
+    font-size: 16px;
+    color: #FFFFFF;
+    margin: 0 0 0 auto;
+    a{
+      color: white;
+      display: inline-block;
+      margin-left: 0.47rem;
+    }
+   }
+    }
+ }
+ .chat-left__group{
+   padding: 0 20px;
+   margin-top: -97px;
+   background-color: #2f3e51;
+   height: 100vh;
+  &__box{
+    padding: 120px 0 40px;
+   &__name{
+     margin-bottom: 5px;
+     height: 15px;
+     font-size: 15px;
+     font-weight: bold;
+     color: #FFFFFF;
+   }
+   &__comment{
+     height: 11px;
+     font-size: 11px;
+     font-weight: bold;
+     color: #FFFFFF;
+   }
+  }
+ }
+}
+
+
