@@ -1,29 +1,22 @@
 .chat-right
  .chat-right__group
   .chat-right__group__box
-   .chat-right__group__box__name
-    test
-   .chat-right__group__box__member
-    テスト太郎
+   - current_user.groups.each do |group|
+    .chat-right__group__box__name
+     = group.name
+    .chat-right__group__box__member
+     Memgers
+     - @group.users.each do |user|
+      = user.name
   .chat-right__group--edit
-   = link_to 'Edit', edit_group_path, class: 'chat-right__group--edit__inside btn'
+   = link_to "Edit", edit_group_path(@group), class: 'chat-right__group--edit__inside btn'
  .chat-right__comment
-  .chat-right__comment__box
-   .chat-right__comment__box__name
-    .chat-right__comment__box__name__user
-     テスト太郎
-    .chat-right__comment__box__name__time
-     2019-8-21
-   .chat-right__comment__box__message
-    test
+  = render @messages
  .chat-right__comment__form
-  .chat-right__comment__form__message
-   type a message
+  = form_for [@group, @message] do |f|
+   = f.text_field :content, class: 'chat-right__comment__form__message', placeholder: 'type a message'
    .chat-right__comment__form__message__img
-    %label.chat-right__comment__form__message__img__pic
+    = f.label :image, class: 'chat-right__comment__form__message__img__pic' do
      = fa_icon "picture-o" 
-     %input.hidden{type: 'file', accept: "image/*"}
-  .chat-right__comment__form--send
-   .chat-right__comment__form--send__inside
-    Send
-    
+     = f.file_field :image, class: 'hidden'
+   = f.submit 'Send', class: 'chat-right__comment__form--send'

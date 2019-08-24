@@ -12,7 +12,8 @@
   .chat-left__group__box
    - current_user.groups.each do |group|
     = link_to '#' do
-     .chat-left__group__box__name
-      = group.name
-     .chat-left__group__box__comment
-      メッセージはまだありません。
+     .chat-left__group__box__in
+      .chat-left__group__box__in__name
+       = group.name
+      .chat-left__group__box__in__comment
+       = group.show_last_message

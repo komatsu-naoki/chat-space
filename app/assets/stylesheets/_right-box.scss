@@ -38,6 +38,7 @@
   }
  }
  .chat-right__comment{
+   overflow: scroll;
    padding: 46px 40px;
    height: calc(100vh - 190px);
    background-color: #fafafa;
@@ -77,13 +78,13 @@
      font-size: 16px;
      color: #434A54;
      line-height: 50px; 
-     width: inherit;
+     width: calc(100vw - 502px);
      padding: 0 40px 0 10px;
      &__img{
        position: absolute;
        font-size: 2.1rem;
-       right: 10px;
-       top: 0;
+       right: 175px;
+       top: 30px;
      }
    }
    .chat-right__comment__form--send{
