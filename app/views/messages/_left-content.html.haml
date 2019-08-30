@@ -11,7 +11,7 @@
  .chat-left__group
   .chat-left__group__box
    - current_user.groups.each do |group|
-    = link_to '#' do
+    = link_to group_messages_path(group) do
      .chat-left__group__box__in
       .chat-left__group__box__in__name
        = group.name
