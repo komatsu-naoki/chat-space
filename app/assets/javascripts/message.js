@@ -3,13 +3,12 @@ $(function(){
 
 
 function buildPost(message){
-  if(message.image !== null) {
-    var image =`<div class="chat-right__comment__box__message">
+ var image =( message.image !== null ?
+    `<div class="chat-right__comment__box__message">
     <img src=${message.image} alt="image" height="300" width="300">
-    </div>`;}
-    else{
-      var image = ``;
-    }
+    </div>`:
+     ``);
+    
   var html =`<div class="chat-right__comment__box">
   <div class="chat-right__comment__box__name">
   <div class="chat-right__comment__box__name__user">
@@ -44,8 +43,8 @@ function buildPost(message){
     .done(function(message){
       var html = buildPost(message);
       $('.chat-right__comment').append(html)
-      $('#message_content').val('')
-      $('#message_image').val('')
+      $('#message_content')[0].reset();
+      $('#message_image')[0].reset();
       $('.chat-right__comment__form--send').attr('disabled', false);
       $('.chat-right__comment').animate({ scrollTop: $('.chat-right__comment')[0].scrollHeight});
     })
