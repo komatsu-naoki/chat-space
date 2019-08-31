@@ -10,21 +10,21 @@ function buildPost(message){
      ``);
     
   var html =`<div class="chat-right__comment__box">
-  <div class="chat-right__comment__box__name">
-  <div class="chat-right__comment__box__name__user">
-  ${message.name}
-  </div>
-  <div class="chat-right__comment__box__name__time">
-  ${message.date}
-  </div>
-  </div>
-  <div class="chat-right__comment__box__message">
-  <p class="lower-message__content">
-  ${message.content}
-  </p>
-  ${image}
-  </div>
-  </div>`
+              <div class="chat-right__comment__box__name">
+               <div class="chat-right__comment__box__name__user">
+                 ${message.name}
+               </div>
+               <div class="chat-right__comment__box__name__time">
+                 ${message.date}
+               </div>
+               </div>
+               <div class="chat-right__comment__box__message">
+                <p class="lower-message__content">
+                 ${message.content}
+                </p>
+                 ${image}
+               </div>
+             </div>`
   return html;
 }
 
