@@ -1,12 +1,12 @@
 .chat-right
  .chat-right__group
   .chat-right__group__box
-   - current_user.groups.each do |group|
+   - current_user.groups.first(1).each do |group|
     .chat-right__group__box__name
      = group.name
     .chat-right__group__box__member
      Memgers
-     - @group.users.each do |user|
+     - @group.users.first(1).each do |user|
       = user.name
   .chat-right__group--edit{"data-turbolinks": "false"}
    = link_to "Edit", edit_group_path(@group), class: 'chat-right__group--edit__inside btn'
