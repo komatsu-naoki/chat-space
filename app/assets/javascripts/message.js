@@ -1,7 +1,5 @@
 $(function(){
 
-
-
 function buildPost(message){
  var image =( message.image !== null ?
     `<div class="chat-right__comment__box__message">
