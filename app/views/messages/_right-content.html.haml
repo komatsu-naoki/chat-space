@@ -8,7 +8,7 @@
      Memgers
      - @group.users.each do |user|
       = user.name
-  .chat-right__group--edit
+  .chat-right__group--edit{"data-turbolinks": "false"}
    = link_to "Edit", edit_group_path(@group), class: 'chat-right__group--edit__inside btn'
  .chat-right__comment
   = render @messages
