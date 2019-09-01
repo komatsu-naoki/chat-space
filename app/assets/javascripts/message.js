@@ -40,9 +40,8 @@ function buildPost(message){
     })
     .done(function(message){
       var html = buildPost(message);
-      $('.chat-right__comment').append(html)
-      $('#message_content')[0].reset();
-      $('#message_image')[0].reset();
+      $('.chat-right__comment').append(html);
+      $('#new_message')[0].reset();
       $('.chat-right__comment__form--send').attr('disabled', false);
       $('.chat-right__comment').animate({ scrollTop: $('.chat-right__comment')[0].scrollHeight});
     })
