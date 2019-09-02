@@ -14,8 +14,9 @@ $(function(){
       messages.forEach(function(message){
         var insertHTML = buildPost(message)
         $('.chat-right__comment').append(insertHTML)
+        $('.chat-right__comment').animate({ scrollTop: $('.chat-right__comment')[0].scrollHeight});
       })
-      $('.chat-right__comment').animate({ scrollTop: $('.chat-right__comment')[0].scrollHeight});
+      
     })
     .fail(function() {
       alert('自動更新に失敗しました');
@@ -23,6 +24,7 @@ $(function(){
    }
   };
 
+  
 
 function buildPost(message){
  var image =( message.image !== null ?
