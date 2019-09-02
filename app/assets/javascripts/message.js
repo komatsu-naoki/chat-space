@@ -1,13 +1,37 @@
 $(function(){
 
+  var reloadMessages = function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+    var last_message_id = $('.chat-right__comment__box:last').data('id')
+    $.ajax({
+      url: 'api/messages',
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      var insertHTML = '';
+      messages.forEach(function(message){
+        var insertHTML = buildPost(message)
+        $('.chat-right__comment').append(insertHTML)
+      })
+      $('.chat-right__comment').animate({ scrollTop: $('.chat-right__comment')[0].scrollHeight});
+    })
+    .fail(function() {
+      alert('自動更新に失敗しました');
+    });
+   }
+  };
+
+
 function buildPost(message){
  var image =( message.image !== null ?
-    `<div class="chat-right__comment__box__message">
+    `<div class="chat-right__comment__box__message" data-id= "${message.id}">
     <img src=${message.image} alt="image" height="300" width="300">
     </div>`:
      ``);
     
-  var html =`<div class="chat-right__comment__box">
+  var html =`<div class="chat-right__comment__box" data-id= "${message.id}" >
               <div class="chat-right__comment__box__name">
                <div class="chat-right__comment__box__name__user">
                  ${message.name}
@@ -50,6 +74,7 @@ function buildPost(message){
       $('.chat-right__comment__form--send').attr('disabled', false);
     });
   });
+  setInterval(reloadMessages, 5000);
 });
 
 
