@@ -48,8 +48,8 @@ function buildPost(message){
                 </p>
                  ${image}
                </div>
-             </div>`
-  return html;
+             </div>`;
+  
 }
 
   $('#new_message').on('submit', function(e){
