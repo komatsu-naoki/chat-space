@@ -34,13 +34,14 @@
       font-size: 16px;
       border: 1px solid #38aef0;
       border-radius: 0;
+      text-decoration: none;
     }
   }
  }
  .chat-right__comment{
    overflow: scroll;
    padding: 46px 40px;
-   height: calc(100vh - 190px);
+   height: calc(100vh - 285px);
    background-color: #fafafa;
   &__box{
     padding-bottom: 40px;
@@ -67,10 +68,10 @@
  .chat-right__comment__form{
    display: flex;
    background-color: #ddd;
-   width: 100%;
+   width: -webkit-fill-available;
    position: absolute;  
    padding: 20px 40px;
-   bottom: -2px;
+   bottom: -3px;
    &__message{
      position: relative;
      height: 50px;
@@ -78,7 +79,7 @@
      font-size: 16px;
      color: #434A54;
      line-height: 50px; 
-     width: calc(100vw - 502px);
+     width: calc(100vw - 540px);
      padding: 0 40px 0 10px;
      &__img{
        position: absolute;
@@ -95,7 +96,7 @@
      padding: 0 30px;
      color: white;
      line-height: 50px;
-     font-size: 1.6rem;
+     font-size: 1.0rem;
    }
  }
 }
@@ -108,4 +109,15 @@
 .lower-message__image{
   height: 300px;
   width: 300px;
+}
+
+#message_image.hidden{
+  display: none;
+}
+
+.fa-picture-o{
+  position: absolute;
+  padding: 4px 0 0 0;
+  margin-left: -10px;
+  font-size: x-large !important
 }
